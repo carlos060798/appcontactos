@@ -1,0 +1,28 @@
+.container{
+ margin-top: 50px;
+}
+
+
+.form_content{
+border: 2px solid rgb(245, 245, 255);
+border: 2px solid whitesmoke;
+border-radius: 40px;
+}
+
+.btn{
+border-radius: 30px;
+}
+.btn_delete{
+ background-color: red;
+ color: white;
+ font-weight: bold;
+ border:none;
+ border-radius: 50%;
+}
+.opacity-50{
+  opacity: 50%;
+}
+/*estilos del spiner*/
+.hidden{
+ display: none;
+}
