@@ -6,9 +6,9 @@ document.addEventListener("DOMContentLoaded", () => {
         Nombre:""  ,
         Telefono:"",
         Email:"",
-        Numero_identidad:"",
-        Direcion:"",
-        Cuidad:""
+        identidad:"",
+        direcion:"",
+        cuidad:""
       }
   // elementos de formulario
 
@@ -31,13 +31,15 @@ document.addEventListener("DOMContentLoaded", () => {
   Identidad.addEventListener("blur", validar);
   Direcion.addEventListener("blur", validar);
   Cuidad.addEventListener("blur", validar);
- // btnreset.addEventListener("click",(e)=>{
-/*reiniciar objeto datos
+  btnreset.addEventListener("click",(e)=>{
+  //reiniciar objeto datos
    Dato.Nombre="";
-   Dato.Email="";
    Dato.Telefono="";
-   Dato.Tipocontacto="";
-  }) */
+   Dato.Email="";
+   Dato.identidad=""
+   Dato.direcion="";
+   Dato.cuidad="";
+  }) 
  
   // funciones   principales
 
@@ -48,7 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
 @(param) e.target.parentElement= {referencia el elemento al cual se le va añadir la alerta} 
 */
       mostrarAlerta(
-        `el campo ${e.target.id} es obligatorio`,
+        `${e.target.id}  esta vacio`,
         e.target.parentElement
       );
       Dato[e.target.name]="";
@@ -107,12 +109,10 @@ document.addEventListener("DOMContentLoaded", () => {
   function validarDatos(){
      if(Object.values(Dato).includes("")){
       // quita estilos y disable del botton guardar
-      btnsub.classList.add("opacity-50")
       btnsub.disabled=true 
       return;
      }
       // quita estilos y disable del botton guardar
-     btnsub.classList.remove("opacity-50")
      btnsub.disabled=false
      
   }  
