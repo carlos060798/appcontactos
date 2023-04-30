@@ -1,6 +1,6 @@
-.container{
+/*.container{
  margin-top: 50px;
-}
+}*/
 
 
 .form_content{
@@ -17,7 +17,7 @@ border-radius: 30px;
  color: white;
  font-weight: bold;
  border:none;
- border-radius: 50%;
+ border-radius: 30px;
 }
 .opacity-50{
   opacity: 50%;
