@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const Direcion=document.querySelector("#direcion");
   const Cuidad = document.querySelector("#cuidad");
   const formulario = document.querySelector("#form");
-  const btnsub = document.querySelector("#btn"); 
+  const btnsub = document.querySelector("#agregar"); 
   const btnreset = document.querySelector("#reset")
 // Objeto para validar datos de   form
 
