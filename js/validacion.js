@@ -3,6 +3,7 @@
 document.addEventListener("DOMContentLoaded", () => {
 
     const Dato={
+       
         Nombre:""  ,
         Telefono:"",
         Email:"",
