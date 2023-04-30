@@ -4,16 +4,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const Dato={
         Nombre:""  ,
-        Email:"",
         Telefono:"",
-        Tipocontacto:""
+        Email:"",
+        Numero_identidad:"",
+        Direcion:"",
+        Cuidad:""
       }
   // elementos de formulario
 
   const inputnombre = document.querySelector("#Nombre");
-  const inputemail = document.querySelector("#Email");
   const inputTelefono = document.querySelector("#Telefono");
-  const inputTipodecontacto = document.querySelector("#Tipocontacto");
+  const inputemail = document.querySelector("#Email");
+  const Identidad = document.querySelector("#identidad");
+  const Direcion=document.querySelector("#direcion");
+  const Cuidad = document.querySelector("#cuidad");
   const formulario = document.querySelector("#form");
   const btnsub = document.querySelector("#btn"); 
   const btnreset = document.querySelector("#reset")
@@ -22,9 +26,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // eventos
   inputnombre.addEventListener("blur", validar);
-  inputemail.addEventListener("blur", validar);
   inputTelefono.addEventListener("blur", validar);
-  inputTipodecontacto.addEventListener("blur", validar);
+  inputemail.addEventListener("blur", validar);
+  Identidad.addEventListener("blur", validar);
+  Direcion.addEventListener("blur", validar);
+  Cuidad.addEventListener("blur", validar);
  // btnreset.addEventListener("click",(e)=>{
 /*reiniciar objeto datos
    Dato.Nombre="";
