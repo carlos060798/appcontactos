@@ -62,16 +62,16 @@ function mostarContacto() {
                       <thead class="text-center">
                         <tr >
                           <th scope="col">INFORMACION</th>
-                          <th scope="col">Datos</th>
+                          <th scope="col">DATOS</th>
                         </tr>
                       </thead>
-                      <tbody class="text-center">
+                      <tbody>
                         <tr>
                           <th scope="row">Correo</th>
                           <td>${contacto.Correo}</td>
                         </tr>
                         <tr>
-                          <th scope="row">Numero de identidad</th>
+                          <th scope="row">Cedula</th>
                           <td>${contacto.Identidad}</td>
                         </tr>
                         <tr>
@@ -94,7 +94,7 @@ function mostarContacto() {
                 </div>         
       `;
      const divContacto=document.createElement('div');
-     divContacto.classList.add("col","col-md-8")
+     divContacto.classList.add("col","col-md-10")
      divContacto.innerHTML = card; 
 
      cardsContactos.appendChild(divContacto)
