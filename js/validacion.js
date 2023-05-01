@@ -1,5 +1,5 @@
 // proyecto de validacion de formulario
-
+const D=document
 document.addEventListener("DOMContentLoaded", () => {
 
     const Dato={
@@ -21,9 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const Cuidad = document.querySelector("#cuidad");
   const formulario = document.querySelector("#form");
   const btnsub = document.querySelector("#agregar"); 
-  const btnreset = document.querySelector("#reset")
-// Objeto para validar datos de   form
-
+  const btnreset = document.querySelector("#reset") 
 
   // eventos
   inputnombre.addEventListener("blur", validar);
@@ -41,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
    Dato.direcion="";
    Dato.cuidad="";
   }) 
- 
+  scrollingBtn("#btn_scroll") 
   // funciones   principales
 
   function validar(e) {
@@ -117,6 +115,25 @@ document.addEventListener("DOMContentLoaded", () => {
      btnsub.disabled=false
      
   }  
+  function scrollingBtn(btn){
+   const btnscroll=document.querySelector(btn)
+   //luego se actvia el evento window scroll
+   window.addEventListener("scroll",(e)=>{
+    console.log( window.pageYOffset)
+    let scrolltop=window.pageYOffset
+    if(scrolltop>400){
+      btnscroll.classList.remove("ocultar")
+    }else{
+      btnscroll.classList.add("ocultar")
+    }
+  
+   })
+   btnscroll.addEventListener("click",(e)=>{
+   if(e.target.matches(btn)){
+    window.scrollTo({behavior:"smooth",top:0})
+   }
 
-
+   })
+  }
+  
 });
