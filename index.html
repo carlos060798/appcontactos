@@ -7,17 +7,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
   <link rel="stylesheet" href="estilo.css">
+  <link rel="stylesheet" href="darkmode.css">
   <title>Agenda de contactos</title>
 </head>
 
 <body>
-  <header>
-    <nav class="navbar bg-primary">
-      <div class="container  justify-content-center ">
+  <header class="nav">
+    <nav class=" container navbar">
+      <div class=" justify-content-center ">
 
-        <h3 class="text-light"> <i class="bi bi-person-lines-fill"></i>AGENDA DE CONTACTOS</h3>
+        <h3> <i class="bi bi-person-lines-fill"></i>APPCONTACTOS</h3>
       </div>
+      <buttom class="switch" id="switch">
+				<span><i class="fas fa-sun"></i></span>
+				<span><i class="fas fa-moon"></i></span>
+			</buttom>
     </nav>
   </header>
 
@@ -29,7 +35,7 @@
             <div class="row justify-content-center">
               <div class="col-8 col-md-6 col-lg-10 form_content bg-light">
                 <form class="row g-3 needs-validation my-4 " id="form">
-                  <h3 class="text-center text-primary"> Crear Contacto</h3>
+                  <h3 class="text-center "> Crear Contacto</h3>
                   <div class="col-12 col-md-7">
                     <label for="Nombre" class="form-label">Nombres del contacto</label>
                     <input type="text" class="form-control" id="Nombre" name="Nombre" required>
@@ -86,10 +92,9 @@
     </section>
   </main>
   <button class="scroll ocultar" id="btn_scroll"><i class="bi bi-arrow-up"></i></button>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-    crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  
+    <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+  <script src="darkmode.js"></script>
   <script src="js/validacion.js"></script>
   <script src="appinit.js"></script>
 </body>
