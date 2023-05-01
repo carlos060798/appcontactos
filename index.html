@@ -8,7 +8,6 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="estilo.css">
   <link rel="stylesheet" href="darkmode.css">
   <title>Agenda de contactos</title>
 </head>
@@ -18,7 +17,7 @@
     <nav class=" container navbar">
       <div class=" justify-content-center ">
 
-        <h3> <i class="bi bi-person-lines-fill"></i>APPCONTACTOS</h3>
+        <h3 class="fw-bold"> <i class="bi bi-person-lines-fill"></i>APPCONTACTOS</h3>
       </div>
       <buttom class="switch" id="switch">
 				<span><i class="fas fa-sun"></i></span>
@@ -33,9 +32,9 @@
         <div class="row">
           <div class="col-12 col-lg-6 mt-5">
             <div class="row justify-content-center">
-              <div class="col-11  col-lg-10 form_content bg-light">
+              <div class="col-11  col-lg-10 form_content ">
                 <form class="row g-3 needs-validation my-4 " id="form">
-                  <h3 class="text-center "> Crear Contacto</h3>
+                  <h4 class="text-center fw-bold h3"><i class="bi bi-person-plus-fill"></i> Crear Contacto</h4>
                   <div class="col-12 col-md-7">
                     <label for="Nombre" class="form-label">Nombres del contacto</label>
                     <input type="text" class="form-control" id="Nombre" name="Nombre" required>
@@ -61,15 +60,14 @@
                   </div>
                   <div class="col-12  col-md-5 ">
                     <label for="cuidad" class="form-label">Cuidad</label>
-                    <select class="form-select" id="cuidad" name="cuidad" required>
-                      <option></option>
-                      <option value="Favorito">Favorito</option>
-                      <option value="General">General</option>
+                    <input  type="text" class="form-control" id="cuidad" name="cuidad" required>
+                     
+                     
                     </select>
                   </div>
                   <div class="col-12  d-flex justify-content-center  ">
-                    <button type="submit" class="btn btn-primary mx-4 " id="agregar"  disabled><i class="bi bi-person-fill-add"></i> Guardar</button>
-                    <button type="reset" class="btn btn-danger " id="reset">Nuevo</button>
+                    <button type="submit" class="btn btn-primary mx-4 " id="agregar"  disabled><i class="bi bi-person-fill-add "></i>Agregar</button>
+                    <button type="reset" class="btn btn-danger " id="reset"><i class="bi bi-trash-fill"></i>Nuevo</button>
                   </div>
               </div>
 
@@ -78,7 +76,7 @@
             </div>
           </div>
           <div class="col-12  col-lg-6 mt-5">
-            <h3 class="text-center h1">  <i class="bi bi-person-lines-fill"></i>Agenda  de Contactos</h3>
+            <h3 class="text-center h1 fw-bold"> <i class="bi bi-card-checklist"></i>Agenda  de Contactos</h3>
             <div class="card-group justify-content-center "  id="card-contacto">
 
                 </div>

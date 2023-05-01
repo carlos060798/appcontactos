@@ -55,7 +55,7 @@ function mostarContacto() {
       
       // creando  componente html
       const card = `
-           <div class="card mt-5">
+           <div class="card mt-4 mb-4">
              <div class="card-header bg-transparent border-success text-center"><h5>${contacto.Nombre}<h5></div>
                   <div class="card-body text-success">
                     <table class="table  table-bordered">
@@ -89,7 +89,7 @@ function mostarContacto() {
                       </tbody>
                     </table>
                   </div>
-                  <div class="card-footer bg-transparent border-success text-center"><a class="btn_delete"onclick="borrarLocalStoreContacto(${contacto.id})"><i class="bi bi-person-x"></i>Eliminar</a>
+                  <div class="card-footer bg-transparent border-success text-center"><a class="btn_delete bg-danger"onclick="borrarLocalStoreContacto(${contacto.id})"><i class="bi bi-person-x h4"></i></a>
                   </div>
                 </div>         
       `;

@@ -30,11 +30,23 @@
     background: #222;
 
   }
-  body.dark .nav h3 {
+  body.dark  h3 {
     color: white;
+  } 
+
+  body.dark .form_content {
+    background: white;
+    color: black;
+  }
+  body.dark .scroll{
+    background: white;
+    color: black;
   }
 
-
+.form_content{
+  background: black;
+  color: white;
+}
 
   .switch {
     background: #343d5b;
@@ -79,5 +91,48 @@
     background: 0 0;
     color: #fff;
     padding: 0 0 0 7px;
-  }
- 
+  }  
+
+  .form_content{
+    border: 2px solid rgb(245, 245, 255);
+    border: 2px solid whitesmoke;
+    border-radius: 40px;
+    }
+    
+    .btn{
+    border-radius: 30px;
+    }
+    .btn_delete{
+     color: white;
+     font-weight: bold;
+     padding: 8px 10px;
+     border:none;
+     border-radius: 10px;
+     text-decoration: none;
+     cursor: pointer;
+    }
+    .btn_delete:hover{
+      color: blanchedalmond;
+    }
+    
+ /*estilos boton scroll*/
+.scroll{
+    position: fixed;
+    z-index: 999;
+    bottom: 1vh;
+    right: calc(4.25rem + 1vw);
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    font-weight: bold;
+    background: black;
+    color: white;
+    cursor: pointer;
+    outline: 0;
+    border: none;
+    }
+    
+    .ocultar{
+    visibility: hidden;
+    opacity: 0;
+    }
