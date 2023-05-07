@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const Cuidad = document.querySelector("#cuidad");
   const formulario = document.querySelector("#form");
   const btnsub = document.querySelector("#agregar"); 
-  const btnreset = document.querySelector("#reset") 
+  //const btnreset = document.querySelector("#reset") 
 
   // eventos
   inputnombre.addEventListener("blur", validar);
@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
   Identidad.addEventListener("blur", validar);
   Direcion.addEventListener("blur", validar);
   Cuidad.addEventListener("blur", validar);
-  btnreset.addEventListener("click",(e)=>{
+  /*btnreset.addEventListener("click",(e)=>{
   //reiniciar objeto datos
    Dato.Nombre="";
    Dato.Telefono="";
@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
    Dato.identidad=""
    Dato.direcion="";
    Dato.cuidad="";
-  }) 
+  }) */ 
   scrollingBtn("#btn_scroll") 
   // funciones   principales
 
@@ -119,7 +119,6 @@ document.addEventListener("DOMContentLoaded", () => {
    const btnscroll=document.querySelector(btn)
    //luego se actvia el evento window scroll
    window.addEventListener("scroll",(e)=>{
-    console.log( window.pageYOffset)
     let scrolltop=window.pageYOffset
     if(scrolltop>400){
       btnscroll.classList.remove("ocultar")
