@@ -57,7 +57,7 @@ function agregarContacto(e) {
   console.log(Contactos);
   setTimeout(()=>{
     formulario.reset()
-  },7000)
+  },3000)
 
 }
 

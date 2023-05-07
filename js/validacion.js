@@ -1,57 +1,36 @@
-// proyecto de validacion de formulario
-const D=document
+// proyecto variables
+const Nombre = document.querySelector("#Nombre");
+const Telefono = document.querySelector("#Telefono");
+const Email = document.querySelector("#Email");
+const Identidad = document.querySelector("#identidad");
+const Direcion=document.querySelector("#direcion");
+const Cuidad = document.querySelector("#cuidad");
+const btn = document.querySelector("#agregar");
+const Dato={      
+  Nombre:""  ,
+  Telefono:"",
+  Email:"",
+  identidad:"",
+  direcion:"",
+  cuidad:""
+}
 document.addEventListener("DOMContentLoaded", () => {
 
-    const Dato={
-       
-        Nombre:""  ,
-        Telefono:"",
-        Email:"",
-        identidad:"",
-        direcion:"",
-        cuidad:""
-      }
-  // elementos de formulario
-
-  const inputnombre = document.querySelector("#Nombre");
-  const inputTelefono = document.querySelector("#Telefono");
-  const inputemail = document.querySelector("#Email");
-  const Identidad = document.querySelector("#identidad");
-  const Direcion=document.querySelector("#direcion");
-  const Cuidad = document.querySelector("#cuidad");
-  const formulario = document.querySelector("#form");
-  const btnsub = document.querySelector("#agregar"); 
-  //const btnreset = document.querySelector("#reset") 
-
   // eventos
-  inputnombre.addEventListener("blur", validar);
-  inputTelefono.addEventListener("blur", validar);
-  inputemail.addEventListener("blur", validar);
+  Nombre.addEventListener("blur", validar);
+  Telefono.addEventListener("blur", validar);
+  Email.addEventListener("blur", validar);
   Identidad.addEventListener("blur", validar);
   Direcion.addEventListener("blur", validar);
   Cuidad.addEventListener("blur", validar);
-  /*btnreset.addEventListener("click",(e)=>{
-  //reiniciar objeto datos
-   Dato.Nombre="";
-   Dato.Telefono="";
-   Dato.Email="";
-   Dato.identidad=""
-   Dato.direcion="";
-   Dato.cuidad="";
-  }) */ 
+
   scrollingBtn("#btn_scroll") 
   // funciones   principales
 
   function validar(e) {
     // validar  que no esten vacios los campos
     if (e.target.value.trim() === "") {
-      /* @(param) e.target.id= {personaliza el mensaje segun el elemento faltante} 
-@(param) e.target.parentElement= {referencia el elemento al cual se le va añadir la alerta} 
-*/
-      mostrarAlerta(
-        `${e.target.id}  esta vacio`,
-        e.target.parentElement
-      );
+     mostrarAlerta(`${e.target.id} esta vacio`,e.target.parentElement);
       Dato[e.target.name]="";
       validarDatos()
       return;
@@ -64,31 +43,27 @@ document.addEventListener("DOMContentLoaded", () => {
           return;   
     }
  limpiarAlerta(e.target.parentElement);
-
 // desestructuracion de objet Dato
  Dato[e.target.name]=e.target.value.trim().toLowerCase()
  console.log(Dato)
  validarDatos()
-
   }
 
   // funciones axuliares
 
-  function mostrarAlerta(mensaje, referencia) {
+  function mostrarAlerta(mensaje,referencia) {
     limpiarAlerta(referencia);
-
+   
     //creaccion de alerta
     const alerta = document.createElement("p");
+    alerta.classList.add( "bg-danger","text-center", "text-light","mt-2","alerta");
     alerta.textContent = mensaje;
-    alerta.classList.add(
-      "bg-danger",
-      "text-center",
-      "text-light",
-      "mt-2",
-      "alerta"
-    );
+  
     //agregar error al formulario
-    referencia.appendChild(alerta);
+    referencia.appendChild(alerta);  
+    setTimeout(()=>{
+    alerta.remove()
+    },2000)
   }
 
   function limpiarAlerta(referencia) {
@@ -108,11 +83,11 @@ document.addEventListener("DOMContentLoaded", () => {
   function validarDatos(){
      if(Object.values(Dato).includes("")){
       // quita estilos y disable del botton guardar
-      btnsub.disabled=true 
+      btn.disabled=true 
       return;
      }
       // quita estilos y disable del botton guardar
-     btnsub.disabled=false
+     btn.disabled=false
      
   }  
   function scrollingBtn(btn){
