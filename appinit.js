@@ -52,7 +52,19 @@ function agregarContacto(e) {
   DatosContacto.Identidad = inputidentidad.value
   DatosContacto.Direcion= inputdireccion.value
   DatosContacto.Cuidad= inputcuidad.value
+  const contactoEditar = Contactos.find((contacto) => contacto.id === DatosContacto.id);
+  if (contactoEditar) {
+    // Actualizar los datos del contacto con los valores del formulario
+    contactoEditar.Nombre = DatosContacto.Nombre;
+    contactoEditar.Telefono = DatosContacto.Telefono;
+    contactoEditar.Correo = DatosContacto.Correo;
+    contactoEditar.Identidad = DatosContacto.Identidad;
+    contactoEditar.Direcion = DatosContacto.Direcion;
+    contactoEditar.Cuidad = DatosContacto.Cuidad; 
+    btnagregar.textContent = "Agregar";
+  } else {
   Contactos = [...Contactos, DatosContacto];
+  }
   mostarContacto();
   console.log(Contactos);
   setTimeout(()=>{
@@ -68,7 +80,46 @@ function mostarContacto() {
     Contactos.forEach((contacto) => {
       const{Nombre,Correo,Identidad,Telefono,Direcion,Cuidad,id}=contacto
       // creando  componente html
-      const card = `
+      const card =`<div class="card mt-4 mb-4">
+      <div class="card-header bg-transparent border-success text-center"><h5>${Nombre}<h5></div>
+           <div class="card-body text-success">
+             <table class="table  table-bordered">
+               <thead class="text-center">
+                 <tr >
+                   <th scope="col">INFORMACION</th>
+                   <th scope="col">DATOS</th>
+                 </tr>
+               </thead>
+               <tbody>
+                 <tr>
+                   <th scope="row">Correo</th>
+                   <td>${Correo}</td>
+                 </tr>
+                 <tr>
+                   <th scope="row">Cedula</th>
+                   <td>${Identidad}</td>
+                 </tr>
+                 <tr>
+                   <th scope="row">Telefono</th>
+                   <td>${Telefono}</td>
+                 </tr>
+                 <tr>
+                   <th scope="row">Direcion</th>
+                   <td>${Direcion}</td>
+                 </tr>
+                 <tr>
+                   <th scope="row">Cuidad</th>
+                   <td>${Cuidad}</td>
+                 </tr>
+               </tbody>
+             </table>
+           </div>
+           <div class="card-footer bg-transparent border-success text-center">
+              <button class="btn_delete bg-danger"onclick="borrarLocalStoreContacto(${id})"><i class="bi bi-person-x h4"></i></button>
+              <button  class="btn_delete bg-success"onclick="cargarDatosContacto(${id})">Editar</button>
+           </div>
+         </div>    `
+     /*`
            <div class="card mt-4 mb-4">
              <div class="card-header bg-transparent border-success text-center"><h5>${Nombre}<h5></div>
                   <div class="card-body text-success">
@@ -104,10 +155,10 @@ function mostarContacto() {
                     </table>
                   </div>
                   <div class="card-footer bg-transparent border-success text-center"><a class="btn_delete bg-danger"onclick="borrarLocalStoreContacto(${id})"><i class="bi bi-person-x h4"></i></a>
-                  <div class="card-footer bg-transparent border-success text-center"><a class="btn_delete bg-success"onclick="EditarContacto()">Editar</a>
+                  <div class="card-footer bg-transparent border-success text-center"><a class="btn_delete bg-success"onclick="cargarDatosContacto(${id})">Editar</a>
                   </div>
                 </div>         
-      `;
+      `;*/
      const divContacto=document.createElement('div');
      divContacto.classList.add("col","col-md-10")
      divContacto.innerHTML = card; 
@@ -137,6 +188,15 @@ function borrarLocalStoreContacto(id) {
   mostarContacto();
 }
 
-function EditarContacto() {
- console.log("editando")
+function cargarDatosContacto(id) {
+  const contacto = Contactos.find((c) => c.id === id);
+  inputnombre.value = contacto.Nombre;
+  inputtelefono.value = contacto.Telefono;
+  inputcorreo.value = contacto.Correo;
+  inputidentidad.value = contacto.Identidad;
+  inputdireccion.value = contacto.Direcion;
+  inputcuidad.value = contacto.Cuidad;
+  editable = true;
+  DatosContacto.id = id;
+  btnagregar.textContent = "Actualizar";
 }
