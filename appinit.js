@@ -10,6 +10,7 @@ const inputnombre = document.querySelector("#Nombre"),
 
 // variables genererales
 const btnagregar = document.querySelector("#agregar");
+const btnactualizar = document.querySelector("#actualizar");
 const formulario = document.querySelector("#form");
 const cardsContactos = document.querySelector("#card-contacto");
 
@@ -33,6 +34,7 @@ agendaContactos();
 
 function agendaContactos() {
   formulario.addEventListener("submit", agregarContacto);
+   btnactualizar.addEventListener("click",agregarContacto);
   document.addEventListener("DOMContentLoaded", () => {
     // DEVUELVE EL VALOR DEL LOCALSTORAGE SI EXISTE SI NO ASIGANA UN [] PARA EVIATAR EL NULL
     Contactos = JSON.parse(localStorage.getItem("CONTACTOS")) || [];
@@ -52,6 +54,7 @@ function agregarContacto(e) {
   DatosContacto.Identidad = inputidentidad.value
   DatosContacto.Direcion= inputdireccion.value
   DatosContacto.Cuidad= inputcuidad.value
+// mapeo del aray mediante id para en caso de editado no crear una copia nueva
   const contactoEditar = Contactos.find((contacto) => contacto.id === DatosContacto.id);
   if (contactoEditar) {
     // Actualizar los datos del contacto con los valores del formulario
@@ -63,6 +66,7 @@ function agregarContacto(e) {
     contactoEditar.Cuidad = DatosContacto.Cuidad; 
     btnagregar.textContent = "Agregar";
   } else {
+// caso de no existir se crea uno nuevo
   Contactos = [...Contactos, DatosContacto];
   }
   mostarContacto();
@@ -189,7 +193,7 @@ function borrarLocalStoreContacto(id) {
 }
 
 function cargarDatosContacto(id) {
-  const contacto = Contactos.find((c) => c.id === id);
+  const contacto = Contactos.find(contacto => contacto.id === id);
   inputnombre.value = contacto.Nombre;
   inputtelefono.value = contacto.Telefono;
   inputcorreo.value = contacto.Correo;
@@ -198,5 +202,5 @@ function cargarDatosContacto(id) {
   inputcuidad.value = contacto.Cuidad;
   editable = true;
   DatosContacto.id = id;
-  btnagregar.textContent = "Actualizar";
+
 }
